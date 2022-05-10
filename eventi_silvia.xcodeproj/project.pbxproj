@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
-		1BCB532D282AAEE100AAF7A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532C282AAEE100AAF7A4 /* ContentView.swift */; };
 		1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */; };
 		1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */; };
+		1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5338282AAF0700AAF7A4 /* splashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventi_silvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventi_silviaApp.swift; sourceTree = "<group>"; };
-		1BCB532C282AAEE100AAF7A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1BCB5338282AAF0700AAF7A4 /* splashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */,
-				1BCB532C282AAEE100AAF7A4 /* ContentView.swift */,
+				1BCB5338282AAF0700AAF7A4 /* splashView.swift */,
 				1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */,
 				1BCB5330282AAEE500AAF7A4 /* Preview Content */,
 			);
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BCB532D282AAEE100AAF7A4 /* ContentView.swift in Sources */,
+				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +276,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +305,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
