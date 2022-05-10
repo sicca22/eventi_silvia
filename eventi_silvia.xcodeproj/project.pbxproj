@@ -11,6 +11,10 @@
 		1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */; };
 		1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */; };
 		1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5338282AAF0700AAF7A4 /* splashView.swift */; };
+		1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */; };
+		1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */; };
+		1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5343282ABE1900AAF7A4 /* LoginView.swift */; };
+		1BCB5347282AC87300AAF7A4 /* DBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCB5346282AC87300AAF7A4 /* DBNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1BCB5338282AAF0700AAF7A4 /* splashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashView.swift; sourceTree = "<group>"; };
+		1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		1BCB5343282ABE1900AAF7A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BCB5347282AC87300AAF7A4 /* DBNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,9 @@
 			children = (
 				1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */,
 				1BCB5338282AAF0700AAF7A4 /* splashView.swift */,
+				1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */,
+				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
+				1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */,
 				1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */,
 				1BCB5330282AAEE500AAF7A4 /* Preview Content */,
 			);
@@ -83,6 +94,9 @@
 			dependencies = (
 			);
 			name = eventi_silvia;
+			packageProductDependencies = (
+				1BCB5346282AC87300AAF7A4 /* DBNetworking */,
+			);
 			productName = eventi_silvia;
 			productReference = 1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 1BCB531E282AAEE100AAF7A4;
+			packageReferences = (
+				1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */,
+			);
 			productRefGroup = 1BCB5328282AAEE100AAF7A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +156,9 @@
 			files = (
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */,
+				1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */,
+				1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */,
+				1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +361,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davidebalistreri/dbnetworking";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BCB5346282AC87300AAF7A4 /* DBNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */;
+			productName = DBNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BCB531F282AAEE100AAF7A4 /* Project object */;
 }

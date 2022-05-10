@@ -29,7 +29,7 @@ struct SplashView: View {
                     
                 
                 Circle ()
-                    .foregroundColor(.white)
+                    .foregroundColor(.init(hex:0xFEFEFE))
                     .frame(width: 300, height: 300)
                     .overlay{
                         VStack{
