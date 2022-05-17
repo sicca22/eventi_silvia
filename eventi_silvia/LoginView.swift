@@ -14,7 +14,8 @@ struct LoginView: View {
     @State private var email: String = ""
 
     @State private var password: String = ""
-
+    //solo per dimostrare che funziona
+    @State private var tokenRicevuto = " Fai il log inhahahah "
     
 
     var body: some View {
@@ -87,24 +88,37 @@ struct LoginView: View {
 
                     .bold()
 
+                
             }
+            //aggiungi cose text field
+            
 
             Spacer()
-
+            
+            
+            HStack {
+                Spacer()
+                Text("\(tokenRicevuto)")
+                    .font(.system(size:16, weight:.medium))
+                Spacer()
+            }
+            Spacer()
             VStack {
 
                 HStack(spacing: 0) {
 
                     Text ("Non hai un account?")
 
-                    Text("Rrgistrati")
+                    Text("Registrati")
 
                         .bold()
 
                 }
 
                 Button{
-                    login()
+                    Task {
+                        await login()
+                    }
                 } label: {
 
                     Text ("Accedi")
@@ -116,10 +130,13 @@ struct LoginView: View {
                         .padding()
 
                         .frame(maxWidth: .infinity)
+                    
 
                 }
 
-                .background(Color(hex: 0xBA3FF4)  )            }
+                .background(Color(hex: 0xBA3FF4)  )
+                .cornerRadius(16)
+            }
 
             
 
@@ -132,8 +149,22 @@ struct LoginView: View {
         .padding()
 
     }
-    func login() {
-        
+    func login() async {
+        //Richiesta di web con DbNetmarketin
+        let request = DBNetworking.request(
+            url: "https://edu.davidebalistreri.it/app/v2/login",
+            type: .post,
+            
+            parameters: [
+                "email":self.email,
+                "password":self.password,
+            ])
+        let response = await request.response(type: ResponseModel.self)
+        tokenRicevuto = response.body?.data?.authToken ?? "hai sbagliato ad inserire le credenziali"
+        //fake
+        withAnimation {
+            LoginHelper.shared.save()
+        }
     }
 
 }

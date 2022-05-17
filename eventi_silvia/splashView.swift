@@ -11,10 +11,16 @@ import SwiftUI
 struct SplashView: View {
     @State var isAnimating = false
     //se la pagina principale è visibile
-    @State var isStarted = false
+    @StateObject var sharedLogin = LoginHelper.shared
+   
     var body: some View {
-        if isStarted {
-            //ContentView()
+        if sharedLogin.isLogged == true {
+            //c'è un utente connesso e mostro direttamente la pagine aprincipale
+            HomeView()
+            
+        }else if sharedLogin.isLogged == false {
+            //non c'è un utente loggato e mostro la pagine di benvenuto 
+            WelcomeView()
         }else {
             //mostro lo splash con lo screen
             ZStack {
@@ -33,9 +39,9 @@ struct SplashView: View {
                     .frame(width: 300, height: 300)
                     .overlay{
                         VStack{
-                            Text("battle of")
+                            Text("EventApp")
                                 
-                            Text("2 JellyFish")
+                           
                             Text("🐌🐌🐌")
                         }
                     }
@@ -48,9 +54,10 @@ struct SplashView: View {
                 //aspeto che sia finita l'amìnimazione e creo un task
                 Task {
                     isAnimating = true
-                    try? await Task.sleep(nanoseconds: 3_000_000_000)
+                    try? await Task.sleep(nanoseconds: 2_500_000_000)
                     //apro la pagina principale dell'app
                     withAnimation{
+                       LoginHelper.shared.load()
                         //isStarted = true
                         
                     }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
+		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
+		1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */; };
+		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
+		1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3282833F7FC00E233AB /* LoginHelper.swift */; };
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
 		1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */; };
 		1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */; };
@@ -14,10 +19,14 @@
 		1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */; };
 		1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */; };
 		1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5343282ABE1900AAF7A4 /* LoginView.swift */; };
-		1BCB5347282AC87300AAF7A4 /* DBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 1BCB5346282AC87300AAF7A4 /* DBNetworking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
+		1B5BC7F02833E3C8009A7DFC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		1BB1D3262833F76D00E233AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1BB1D3282833F7FC00E233AB /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventi_silvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventi_silviaApp.swift; sourceTree = "<group>"; };
 		1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,13 +42,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BCB5347282AC87300AAF7A4 /* DBNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B5BC7EF2833E39E009A7DFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B5BC7F02833E3C8009A7DFC /* UserModel.swift */,
+				1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BB1D32A2833F81B00E233AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */,
+				1BB1D3282833F7FC00E233AB /* LoginHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1BCB531E282AAEE100AAF7A4 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +87,12 @@
 			children = (
 				1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */,
 				1BCB5338282AAF0700AAF7A4 /* splashView.swift */,
+				1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */,
 				1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */,
+				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
-				1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */,
+				1B5BC7EF2833E39E009A7DFC /* Models */,
+				1BB1D32A2833F81B00E233AB /* Helpers */,
 				1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */,
 				1BCB5330282AAEE500AAF7A4 /* Preview Content */,
 			);
@@ -95,7 +124,6 @@
 			);
 			name = eventi_silvia;
 			packageProductDependencies = (
-				1BCB5346282AC87300AAF7A4 /* DBNetworking */,
 			);
 			productName = eventi_silvia;
 			productReference = 1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */;
@@ -126,7 +154,6 @@
 			);
 			mainGroup = 1BCB531E282AAEE100AAF7A4;
 			packageReferences = (
-				1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */,
 			);
 			productRefGroup = 1BCB5328282AAEE100AAF7A4 /* Products */;
 			projectDirPath = "";
@@ -154,11 +181,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
+				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
+				1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */,
 				1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */,
 				1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */,
 				1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */,
+				1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */,
 				1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */,
+				1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,25 +393,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/davidebalistreri/dbnetworking";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1BCB5346282AC87300AAF7A4 /* DBNetworking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1BCB5345282AC87300AAF7A4 /* XCRemoteSwiftPackageReference "dbnetworking" */;
-			productName = DBNetworking;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BCB531F282AAEE100AAF7A4 /* Project object */;
 }
