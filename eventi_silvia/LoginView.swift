@@ -15,7 +15,7 @@ struct LoginView: View {
 
     @State private var password: String = ""
     //solo per dimostrare che funziona
-    @State private var tokenRicevuto = " Fai il log inhahahah "
+    @State private var tokenRicevuto = "  "
     
 
     var body: some View {
@@ -138,7 +138,7 @@ struct LoginView: View {
                 .cornerRadius(16)
             }
 
-            
+          
 
         }
 
@@ -149,7 +149,9 @@ struct LoginView: View {
         .padding()
 
     }
-    func login() async {
+    
+    //@MainActor serve ad eseguire le operazioni di aggiornamento UI sempre sul tread principale
+    @MainActor func login() async {
         //Richiesta di web con DbNetmarketin
         let request = DBNetworking.request(
             url: "https://edu.davidebalistreri.it/app/v2/login",
@@ -160,7 +162,13 @@ struct LoginView: View {
                 "password":self.password,
             ])
         let response = await request.response(type: ResponseModel.self)
-        tokenRicevuto = response.body?.data?.authToken ?? "hai sbagliato ad inserire le credenziali"
+        
+        //controllo se la richiesta è andata a buon fine
+        if let descrizioneErrore = response.body?.error?.description {
+            tokenRicevuto = descrizioneErrore
+            return
+        }
+        tokenRicevuto = response.body?.data?.authToken ?? "Hai sbagliato ad inserire le credenziali!"
         //fake
         withAnimation {
             LoginHelper.shared.save()
