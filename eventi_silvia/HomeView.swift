@@ -9,15 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
-            Text("Benvenuto!")
-            
-            Button ("Logout") {
-                //UserDefaults.standard.save()
-                LoginHelper.shared.save(userToSave: nil)
-            }
-            //fare log
-        }
+       EventsView()
     }
 }
 

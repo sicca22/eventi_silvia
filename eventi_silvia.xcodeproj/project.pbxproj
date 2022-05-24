@@ -10,6 +10,8 @@
 		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
 		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
 		1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */; };
+		1B890C75283D33E200CC0A77 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B890C74283D33E200CC0A77 /* EventsView.swift */; };
+		1B890C77283D345F00CC0A77 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B890C76283D345F00CC0A77 /* EventModel.swift */; };
 		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
 		1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3282833F7FC00E233AB /* LoginHelper.swift */; };
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
@@ -25,6 +27,8 @@
 		1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
 		1B5BC7F02833E3C8009A7DFC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		1B890C74283D33E200CC0A77 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		1B890C76283D345F00CC0A77 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		1BB1D3262833F76D00E233AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BB1D3282833F7FC00E233AB /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventi_silvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,7 @@
 			children = (
 				1B5BC7F02833E3C8009A7DFC /* UserModel.swift */,
 				1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */,
+				1B890C76283D345F00CC0A77 /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 				1BCB5338282AAF0700AAF7A4 /* splashView.swift */,
 				1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */,
 				1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */,
+				1B890C74283D33E200CC0A77 /* EventsView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
 				1B5BC7EF2833E39E009A7DFC /* Models */,
@@ -190,6 +196,8 @@
 				1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */,
 				1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */,
 				1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */,
+				1B890C75283D33E200CC0A77 /* EventsView.swift in Sources */,
+				1B890C77283D345F00CC0A77 /* EventModel.swift in Sources */,
 				1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
