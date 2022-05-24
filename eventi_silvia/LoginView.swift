@@ -11,11 +11,11 @@ import SwiftUI
 
 struct LoginView: View {
 
-    @State private var email: String = ""
+    @State private var email: String = "silvia@email.it"
 
-    @State private var password: String = ""
+    @State private var password: String = "password"
     //solo per dimostrare che funziona
-    @State private var tokenRicevuto = "  "
+
     
 
     var body: some View {
@@ -96,12 +96,7 @@ struct LoginView: View {
             Spacer()
             
             
-            HStack {
-                Spacer()
-                Text("\(tokenRicevuto)")
-                    .font(.system(size:16, weight:.medium))
-                Spacer()
-            }
+        
             Spacer()
             VStack {
 
@@ -165,14 +160,26 @@ struct LoginView: View {
         
         //controllo se la richiesta è andata a buon fine
         if let descrizioneErrore = response.body?.error?.description {
-            tokenRicevuto = descrizioneErrore
+            //TODO: mostrare alert di errore
+            
+            
             return
         }
-        tokenRicevuto = response.body?.data?.authToken ?? "Hai sbagliato ad inserire le credenziali!"
+        
+        //codice che certifica che il token è certificato
+        
+        
+       if let user = response.body?.data {
+           withAnimation{
+               //sdalvo tutti i dati dell'utente
+               LoginHelper.shared.save(userToSave: user)
+           }
+       } else {
+           
+       }
+        //"Hai sbagliato ad inserire le credenziali!"
         //fake
-        withAnimation {
-            LoginHelper.shared.save()
-        }
+        
     }
 
 }
