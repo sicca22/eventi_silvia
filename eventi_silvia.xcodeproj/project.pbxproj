@@ -21,6 +21,7 @@
 		1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */; };
 		1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */; };
 		1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5343282ABE1900AAF7A4 /* LoginView.swift */; };
+		1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1BCB5343282ABE1900AAF7A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */,
 				1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */,
 				1B890C74283D33E200CC0A77 /* EventsView.swift */,
+				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
 				1B5BC7EF2833E39E009A7DFC /* Models */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */,
+				1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
 				1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */,
