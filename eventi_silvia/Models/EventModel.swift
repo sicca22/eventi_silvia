@@ -7,14 +7,14 @@
 
 import Foundation
 struct EventModel: Codable,  Identifiable {
-    init() {
-        
-    }
+    
     
     var id:Int?
     var name:String?
     var description:String?
     var date:String?
+    var categoryName:String?
+    var attendeesCount:Int?
     var coverUrl:String?
     var price:Int?
     var address:String?
@@ -25,6 +25,7 @@ struct EventModel: Codable,  Identifiable {
     var viewsCount:Int?
     var commentsCount:Int?
     var likesCount:Int?
+    var eventsCount:Int?
     var user:UserModel?
     
     

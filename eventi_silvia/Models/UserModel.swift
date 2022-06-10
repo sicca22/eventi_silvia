@@ -8,15 +8,17 @@
 import Foundation
 
 struct UserModel: Codable {
-    let id:Int?
-    let authToken:String?
-    let email:String?
-    let firstName:String?
-    let lastName:String?
-    let avatarUrl:String?
-    let birthDate:String?
-    let city:String?
-    let money:Int?
-    let createdAt:String?
-    let updatedAt:String?
+    var id:Int?
+    var authToken:String?
+    var email:String?
+    var firstName:String?
+    var lastName:String?
+    var avatarUrl:String?
+    var birthDate:String?
+    var city:String?
+    var money:Int?
+    var createdAt:String?
+    var updatedAt:String?
+    var eventsCount:Int?
+    //var fullName: 
 }

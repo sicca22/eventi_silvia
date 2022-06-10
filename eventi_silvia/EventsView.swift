@@ -15,10 +15,12 @@ struct EventsView: View {
     var body: some View {
         NavigationView {
             List(eventsToShow) { event in
-                NavigationLink(destination: EventDetailView(eventToShow: event)) {
+                ZStack {
                     EventCard(eventToShow: event)
-                        .listRowSeparator(.hidden)
+                        
+                    NavigationLink(destination: EventDetailView(eventToShow: event)) { }
                 }
+                .listRowSeparator(.hidden)
                 
             }
             //tolgo il padding intorno alla lista
@@ -55,19 +57,8 @@ struct EventCard: View {
     
     var body: some View {
         VStack (alignment: .leading){
-            AsyncImage(
-                url:URL(string: eventToShow.coverUrl ?? ""),
-                content: { image in
-                    
-                    image.resizable().scaledToFill()
-                },
-                placeholder: {
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                        Spacer()
-                    }
-                })
+            ImageView(
+                url: eventToShow.coverUrl )
                 .frame(width: . infinity ,height:200)
                 .cornerRadius(24)
                 .overlay {
