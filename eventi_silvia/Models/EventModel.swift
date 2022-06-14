@@ -9,6 +9,8 @@ import Foundation
 struct EventModel: Codable,  Identifiable {
     
     
+    
+    
     var id:Int?
     var name:String?
     var description:String?
@@ -36,7 +38,10 @@ struct EventResponse: Codable {
     let data: [EventModel]?
 }
 
-extension EventModel {
+extension EventModel: Equatable {
+    static func == (lhs: EventModel, rhs: EventModel) -> Bool {
+        return lhs.id == rhs.id
+    }
     //static var eventodiProva: EventModel{
       //  return try
   //  }

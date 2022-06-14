@@ -15,6 +15,7 @@
 		1B8BAC9E285384EA00BE4A07 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8BAC9D285384EA00BE4A07 /* ImageView.swift */; };
 		1B8BACA02853A46800BE4A07 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8BAC9F2853A46800BE4A07 /* CartView.swift */; };
 		1B8BACA22853A57600BE4A07 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8BACA12853A57600BE4A07 /* ProfileView.swift */; };
+		1B9014362858D08D005F31D4 /* CartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9014352858D08D005F31D4 /* CartHelper.swift */; };
 		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
 		1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3282833F7FC00E233AB /* LoginHelper.swift */; };
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
@@ -36,6 +37,7 @@
 		1B8BAC9D285384EA00BE4A07 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1B8BAC9F2853A46800BE4A07 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		1B8BACA12853A57600BE4A07 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1B9014352858D08D005F31D4 /* CartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		1BB1D3262833F76D00E233AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BB1D3282833F7FC00E233AB /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventi_silvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 		1BB1D32A2833F81B00E233AB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1B9014352858D08D005F31D4 /* CartHelper.swift */,
 				1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */,
 				1BB1D3282833F7FC00E233AB /* LoginHelper.swift */,
 			);
@@ -201,6 +204,7 @@
 			files = (
 				1B8BACA02853A46800BE4A07 /* CartView.swift in Sources */,
 				1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */,
+				1B9014362858D08D005F31D4 /* CartHelper.swift in Sources */,
 				1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
