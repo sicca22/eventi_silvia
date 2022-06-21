@@ -19,6 +19,7 @@ struct EventsView: View {
                     EventCard(eventToShow: event)
                         
                     NavigationLink(destination: EventDetailView(eventToShow: event)) { }
+                    .opacity(0)
                 }
                 .listRowSeparator(.hidden)
                 

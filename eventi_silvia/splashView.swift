@@ -9,6 +9,34 @@ import SwiftUI
 
 
 struct SplashView: View {
+    //impostiamo il colore per tutto l'app
+    //intercetto la creazione di questa pagina per modificare lo stile e colori dell'app
+    init() {
+        //navigation  bar
+        let navigationAppearance = UINavigationBarAppearance()
+        navigationAppearance.configureWithOpaqueBackground()
+        navigationAppearance.backgroundColor = UIColor(named: "baseColor")
+        //per cambiare il colore del testo
+        navigationAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 22)
+        ]
+        UINavigationBar.appearance().standardAppearance = navigationAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationAppearance
+        
+        //tab bar
+        
+        let tabAppearance = UITabBarAppearance()
+        tabAppearance.configureWithOpaqueBackground()
+        tabAppearance.backgroundColor = UIColor(named: "baseColor")
+        UITabBar.appearance().standardAppearance = tabAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabAppearance
+        
+        //tab bar items
+        
+    }
+    
+    
     @State var isAnimating = false
     //se la pagina principale è visibile
     @StateObject var sharedLogin = LoginHelper.shared
@@ -75,3 +103,4 @@ struct splashView_Previews: PreviewProvider {
         }
     }
 }
+//5RXRb7v837xkgoBKWYN3YHPV2Ju9oMj1YxvOOBWBEpKeyoLebS

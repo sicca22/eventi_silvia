@@ -6,6 +6,13 @@
 //
 
 import SwiftUI
+
+struct UIHelper {
+    static let primaryColor = Color(uiColor: UIColor(named:"baseColor")!)
+    static let secondaryColor = Color(hex: 0x000000)
+}
+
+
 extension Color {
     init(hex: UInt, alpha: Double = 1) {
         self.init(

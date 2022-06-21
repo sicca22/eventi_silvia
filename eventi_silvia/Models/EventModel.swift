@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 struct EventModel: Codable,  Identifiable {
     
     
@@ -38,6 +39,8 @@ struct EventResponse: Codable {
     let data: [EventModel]?
 }
 
+
+//estendo la classe dell'evento
 extension EventModel: Equatable {
     static func == (lhs: EventModel, rhs: EventModel) -> Bool {
         return lhs.id == rhs.id
@@ -94,5 +97,17 @@ extension EventModel: Equatable {
         
         formatter.dateFormat = "HH:mm"
         return  formatter.string(from:date ?? Date())
+    }
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D (
+            latitude: self.lat ?? 0,
+            longitude: self.lng ?? 0
+        )
+    }
+    var mapLocation: MapLocation{
+        return MapLocation(
+            name:self.name ?? "senza nome",
+            coordinate: self.coordinate
+        )
     }
 }

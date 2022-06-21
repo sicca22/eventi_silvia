@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+   
     var body: some View {
         VStack{
-        Text(LoginHelper.shared.loggedUser?.firstName ?? "senza nome")
-        Button ("Logout") {
-            LoginHelper.shared.save(userToSave: nil)
-        }
+            ImageView(url:LoginHelper.shared.loggedUser?.avatarUrl)
+                .frame(width: 80, height: 80)
+                .clipShape(Circle())
+        Text(LoginHelper.shared.loggedUser?.firstName ?? "Senza nome")
+                .padding()
+      
+            Button {
+                //codice bottone
+                LoginHelper.shared.save(userToSave: nil)
+            } label: {
+                Text("LogOut")
+                .foregroundColor(.white)
+                .bold()
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(.blue)
+            .cornerRadius(16)
+            
+           
         }
     }
+  
 }
 
 struct ProfileView_Previews: PreviewProvider {

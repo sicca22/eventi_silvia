@@ -50,11 +50,8 @@ struct EventDetailView: View {
                             } label: {
 
                                 Image(systemName: "xmark")
-
                                     .foregroundColor(.white)
-
                                     .font(.system(size: 22).bold())
-
                                     .padding()
 
                             }
@@ -64,7 +61,7 @@ struct EventDetailView: View {
                         }
 
                       
-
+                        Spacer()
                     }
 
                 }
@@ -118,9 +115,22 @@ struct EventDetailView: View {
 
                     
 
-                    Map(coordinateRegion: $region)
-                        .frame(height: 160)
+                    NavigationLink (destination: EventMapView(eventToShow: eventToShow)) {
+                        Map(
+                            coordinateRegion: $region,
+                            //disabilito l'interazione dell'utente
+                            interactionModes: [],
+                            annotationItems: [MapLocation()],
+                            annotationContent: { location in
+                                MapMarker(coordinate: location.coordinate )
+                            }
+                            
+                        )
+                        
+                        
+                            .frame(height: 160)
                         .cornerRadius(16)
+                    }
 
                     
 
@@ -134,24 +144,26 @@ struct EventDetailView: View {
                     Spacer()
                 }
                 .padding()
+              
                 
-            }
-            
-            
-            HStack {
-                ImageView(url:eventToShow.user?.avatarUrl)
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                VStack {
-                    Text(eventToShow.user?.lastName ?? "Organizzatore")
-                    Text("\(eventToShow.user?.eventsCount ?? 0)")
+                HStack  {
+                    ImageView(url:eventToShow.user?.avatarUrl)
+                        .frame(width: 80, height: 80)
+                        .clipShape(Circle())
+                    HStack {
+                        Text(eventToShow.user?.lastName ?? "Organizzatore")
+                        Text("\(eventToShow.user?.eventsCount ?? 0)")
+                        
+                    }
+                    Image (systemName: "arrow.right")
+                        
+                    
                     
                 }
-                Image (systemName: "arrow.right")
-                    
-                
-                
             }
+            
+            
+            
             
             Divider()
                 
@@ -161,14 +173,11 @@ struct EventDetailView: View {
                             .font(.system(size: 30).bold())
 
                             Spacer()
-                                .alert("🛒 Aggiunto al carrello", isPresented: $isAlertPurchaseVisible){}
+                                .alert("🛒 Hai appena acquistato 🤪", isPresented: $isAlertPurchaseVisible){}
                                 .alert("🤑 Fondi insufficienti" , isPresented: $isAlertMoneyVisible){}
                             Button {
-                                if LoginHelper.shared.loggedUser?.money == eventToShow.price {
-                                    isAlertPurchaseVisible = true
-                                } else {
-                                    isAlertMoneyVisible = true
-                                }
+                                //codice bottone
+                                addEventToCard()
                             } label: {
                                 Text("Acquista")
                                 .foregroundColor(.white)
@@ -184,6 +193,30 @@ struct EventDetailView: View {
             
         }
     }
+       // .onAppear {
+            
+       // }
+    
+    
+    func addEventToCard () {
+        //controlla se il biglietto è superiore
+        //- aggiungere l'evento al carrello
+        //mostrare l'alert di successo
+        
+        let loggedUserMoney = LoginHelper.shared.loggedUser?.money ?? 0
+        
+        let eventPrice = eventToShow.price ?? 0
+        
+        if loggedUserMoney >= eventPrice {
+            isAlertPurchaseVisible = true
+            CartHelper.shared.add(item: eventToShow)
+        } else {
+            isAlertMoneyVisible = true
+            
+        }
+        
+        
+    }
 }
 
 
@@ -194,7 +227,9 @@ struct EventDetailView_Previews: PreviewProvider {
         NavigationView {
             EventDetailView(eventToShow: EventModel(
                 name: "evento di prova",
-                coverUrl: "https://www.budapest.org/wp-content/uploads/sites/22/Calendario.jpg"
+                coverUrl: "https://www.budapest.org/wp-content/uploads/sites/22/Calendario.jpg",
+                lat: 42,
+                lng:12
             ))
         }
 
