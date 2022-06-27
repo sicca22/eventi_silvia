@@ -20,6 +20,8 @@
 		1BAA731E286213FA003BD749 /* EventMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA731D286213FA003BD749 /* EventMapView.swift */; };
 		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
 		1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3282833F7FC00E233AB /* LoginHelper.swift */; };
+		1BC73F602869B38900183FAF /* acquisto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BC73F5F2869B38900183FAF /* acquisto.mp3 */; };
+		1BC73F632869B4BB00183FAF /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 1BC73F622869B4BB00183FAF /* SwiftySound */; };
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
 		1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */; };
 		1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */; };
@@ -44,6 +46,7 @@
 		1BAA731D286213FA003BD749 /* EventMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapView.swift; sourceTree = "<group>"; };
 		1BB1D3262833F76D00E233AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1BB1D3282833F7FC00E233AB /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
+		1BC73F5F2869B38900183FAF /* acquisto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acquisto.mp3; sourceTree = "<group>"; };
 		1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventi_silvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventi_silviaApp.swift; sourceTree = "<group>"; };
 		1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC73F632869B4BB00183FAF /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +77,7 @@
 				1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */,
 				1B890C76283D345F00CC0A77 /* EventModel.swift */,
 				1B652E2628620F2500A6D855 /* MapLocation.swift */,
+				1BB1D32A2833F81B00E233AB /* Helpers */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +90,14 @@
 				1BB1D3282833F7FC00E233AB /* LoginHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1BC73F5C2869B28F00183FAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1BC73F5F2869B38900183FAF /* acquisto.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1BCB531E282AAEE100AAF7A4 = {
@@ -118,8 +131,8 @@
 				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
+				1BC73F5C2869B28F00183FAF /* Resources */,
 				1B5BC7EF2833E39E009A7DFC /* Models */,
-				1BB1D32A2833F81B00E233AB /* Helpers */,
 				1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */,
 				1BCB5330282AAEE500AAF7A4 /* Preview Content */,
 			);
@@ -151,6 +164,7 @@
 			);
 			name = eventi_silvia;
 			packageProductDependencies = (
+				1BC73F622869B4BB00183FAF /* SwiftySound */,
 			);
 			productName = eventi_silvia;
 			productReference = 1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */;
@@ -181,6 +195,7 @@
 			);
 			mainGroup = 1BCB531E282AAEE100AAF7A4;
 			packageReferences = (
+				1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */,
 			);
 			productRefGroup = 1BCB5328282AAEE100AAF7A4 /* Products */;
 			projectDirPath = "";
@@ -197,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */,
+				1BC73F602869B38900183FAF /* acquisto.mp3 in Resources */,
 				1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1BC73F622869B4BB00183FAF /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BCB531F282AAEE100AAF7A4 /* Project object */;
 }
