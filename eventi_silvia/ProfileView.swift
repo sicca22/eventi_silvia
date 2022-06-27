@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
+   
    
     var body: some View {
+        NavigationView {
         VStack{
+            
+            
+                
+            
             ImageView(url:LoginHelper.shared.loggedUser?.avatarUrl)
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
@@ -32,6 +37,9 @@ struct ProfileView: View {
             .cornerRadius(16)
             
            
+        }
+        .navigationTitle("Profilo")
+        .navigationBarTitleDisplayMode(.inline)
         }
     }
   

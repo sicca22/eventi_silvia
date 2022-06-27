@@ -15,7 +15,7 @@ struct SplashView: View {
         //navigation  bar
         let navigationAppearance = UINavigationBarAppearance()
         navigationAppearance.configureWithOpaqueBackground()
-        navigationAppearance.backgroundColor = UIColor(named: "baseColor")
+        navigationAppearance.backgroundColor = UIColor(named: "baseColor2")
         //per cambiare il colore del testo
         navigationAppearance.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -67,10 +67,10 @@ struct SplashView: View {
                     .frame(width: 300, height: 300)
                     .overlay{
                         VStack{
-                            Text("EventApp")
+                            Text("EventiLenti")
                                 
                            
-                            Text("🐌🐌🐌")
+                            Text("🍊🍊🍊")
                         }
                     }
                     .opacity(isAnimating ? 1 : 0 )

@@ -50,14 +50,6 @@ struct LoginView: View {
 
                 .padding(.bottom)
 
-            
-
-            
-
-            
-
-            
-
             SecureField("Password" , text: $password )
 
                 .padding()
@@ -69,9 +61,6 @@ struct LoginView: View {
                     RoundedRectangle(cornerRadius: 16)
 
                         .stroke(Color(hex: 0xDDDDDD), lineWidth: 1 )
-
-                    
-
                 }
 
                 .padding(.bottom)
@@ -129,18 +118,16 @@ struct LoginView: View {
 
                 }
 
-                .background(Color(hex: 0xBA3FF4)  )
+                .background(Color("baseColor2")  )
                 .cornerRadius(16)
             }
-
-          
 
         }
 
       
 
         .navigationTitle("Bentornato")
-
+        .navigationBarHidden(true)
         .padding()
 
     }

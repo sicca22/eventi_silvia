@@ -1,6 +1,6 @@
 
 
-
+import SwiftySound
 import SwiftUI
 import MapKit
 
@@ -14,7 +14,8 @@ struct EventDetailView: View {
 
     // L'evento da rappresentare
     var eventToShow: EventModel    
-
+    //meteo
+    @State private var temperatura: Double?
     // L'area sulla mappa
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 42, longitude: 12),
@@ -139,27 +140,39 @@ struct EventDetailView: View {
                     
                     Text(eventToShow.description ?? "Descrizione evento")
 
-                  
+                    HStack {
+                                           
+                                            Text("Previsioni meteo🌦")
+                                            Text("")
+                                            if temperatura == nil {
+                                                Text("-")
+                                                
+                                            }else {
+                                                Text("\(Int(temperatura!))°C")
+                                            }
+                                                
+                                            }
+                    HStack  {
+                        ImageView(url:eventToShow.user?.avatarUrl)
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
+                        HStack {
+                            Text(eventToShow.user?.lastName ?? "Organizzatore")
+                            Text("\(eventToShow.user?.eventsCount ?? 0)")
+                            
+                        }
+                        Image (systemName: "arrow.right")
+                            
+                        
+                        
+                    }
                     
                     Spacer()
                 }
                 .padding()
               
                 
-                HStack  {
-                    ImageView(url:eventToShow.user?.avatarUrl)
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                    HStack {
-                        Text(eventToShow.user?.lastName ?? "Organizzatore")
-                        Text("\(eventToShow.user?.eventsCount ?? 0)")
-                        
-                    }
-                    Image (systemName: "arrow.right")
-                        
-                    
-                    
-                }
+            
             }
             
             
@@ -178,6 +191,7 @@ struct EventDetailView: View {
                             Button {
                                 //codice bottone
                                 addEventToCard()
+                               
                             } label: {
                                 Text("Acquista")
                                 .foregroundColor(.white)
@@ -192,10 +206,32 @@ struct EventDetailView: View {
             .padding()
             
         }
+        .onAppear{
+                    region = MKCoordinateRegion(
+                        center: CLLocationCoordinate2D(latitude: eventToShow.lat ?? 0, longitude: eventToShow.lng ?? 0),
+                        span: MKCoordinateSpan(
+                            latitudeDelta: 0.5,
+                            longitudeDelta: 0.5
+                        )
+                    )
+                    
+                    Task{
+                        let weatherRequest = DBNetworking.request(
+                            url: "https://edu.davidebalistreri.it/app/v2/weather",
+                            parameters: [
+                                "lat": eventToShow.lat ?? 0,
+                                "lng": eventToShow.lng ?? 0,
+                                "appid": "ied",
+                            ])
+
+                        let weatherResponse = await weatherRequest
+                            .response(type: NSDictionary.self)
+                        
+                        temperatura = weatherResponse.body?.value(forKeyPath: "main.temp") as? Double
+                    }
+                }
     }
-       // .onAppear {
-            
-       // }
+      
     
     
     func addEventToCard () {
@@ -210,6 +246,7 @@ struct EventDetailView: View {
         if loggedUserMoney >= eventPrice {
             isAlertPurchaseVisible = true
             CartHelper.shared.add(item: eventToShow)
+            Sound.play(file:"acquisto.mp3")
         } else {
             isAlertMoneyVisible = true
             
@@ -218,6 +255,7 @@ struct EventDetailView: View {
         
     }
 }
+
 
 
 

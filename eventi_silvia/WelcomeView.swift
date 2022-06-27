@@ -13,12 +13,13 @@ struct WelcomeView: View {
             VStack {
                 Spacer()
                 VStack {
-                    Circle()
+                    Image("logo")
                         .frame(width: 100, height: 100)
                         .foregroundColor(Color(.systemGray2))
                     
-                    Text ("NomeApp")
+                    Text ("EventiLenti")
                         .font(.system(size: 24).bold())
+                        .foregroundColor(Color("baseColor"))
                     
                 }
                 Spacer()
@@ -34,12 +35,12 @@ struct WelcomeView: View {
                     
             }
                 
-                .background(Color (hex : 0xBA3FF4))
+                .background(Color("baseColor2"))
                 .cornerRadius(16)
                 NavigationLink(destination: LoginView()) {
                 Text ("Accedi")
                         .font(.system(size:18).bold())
-                        .foregroundColor(Color (hex : 0xBA3FF4))
+                        .foregroundColor(Color("baseColor2"))
                         .padding()
                         .frame(maxWidth: .infinity)
                     
@@ -50,6 +51,7 @@ struct WelcomeView: View {
                 
             }
             .padding(24)
+            .navigationBarHidden(true)
         }
     }
 }
