@@ -28,7 +28,7 @@ struct SplashView: View {
         
         let tabAppearance = UITabBarAppearance()
         tabAppearance.configureWithOpaqueBackground()
-        tabAppearance.backgroundColor = UIColor(named: "baseColor")
+        tabAppearance.backgroundColor = UIColor(named: "secondaryColor")
         UITabBar.appearance().standardAppearance = tabAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabAppearance
         
@@ -53,7 +53,7 @@ struct SplashView: View {
             //mostro lo splash con lo screen
             ZStack {
                 GeometryReader{ deviceGeo in
-                    Image("splashView")
+                    Image("splashImage")
                         .resizable()
                         .scaledToFill()
                         .frame(width: deviceGeo.size.width,
@@ -63,8 +63,9 @@ struct SplashView: View {
                     
                 
                 Circle ()
-                    .foregroundColor(.init(hex:0xFEFEFE))
-                    .frame(width: 300, height: 300)
+                    .foregroundColor(.init(hex:0xFEFEFE, alpha: 0.7))
+                    
+                    .frame(width: 200, height: 200)
                     .overlay{
                         VStack{
                             Text("EventiLenti")

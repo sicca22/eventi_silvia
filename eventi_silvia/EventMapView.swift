@@ -39,7 +39,7 @@ struct EventMapView: View {
             VStack {
                 Spacer()
                 Button {
-                
+                    LocationHelper.navigateTo(coordinate: eventToShow.coordinate, title: eventToShow.address ?? "non c'è l'indirizzo")
             } label: {
                 Text("Apri mappe")
                 .foregroundColor(.white)
@@ -47,7 +47,7 @@ struct EventMapView: View {
             }
             .padding(.horizontal, 32)
             .padding(.vertical, 16)
-            .background(.blue)
+            .background(Color("baseColor"))
         .cornerRadius(16)
             }
             .padding()

@@ -13,16 +13,13 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
         VStack{
-            
-            
-                
-            
+          
             ImageView(url:LoginHelper.shared.loggedUser?.avatarUrl)
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
         Text(LoginHelper.shared.loggedUser?.firstName ?? "Senza nome")
                 .padding()
-      
+           
             Button {
                 //codice bottone
                 LoginHelper.shared.save(userToSave: nil)
@@ -30,10 +27,11 @@ struct ProfileView: View {
                 Text("LogOut")
                 .foregroundColor(.white)
                 .bold()
+                
             }
             .padding(.horizontal, 20)
-            .padding(.vertical, 16)
-            .background(.blue)
+            .padding(.vertical, 10)
+            .background(Color("baseColor"))
             .cornerRadius(16)
             
            

@@ -17,15 +17,15 @@ struct CartView: View {
         
         NavigationView {
            
-                VStack {
+                VStack (alignment: .leading) {
                    
                     if cart.items.isEmpty{
                         Text("il carrello è vuoto")
                         
                     } else {
-                        Text("hai \(cart.items.count)")
+                        Text("ticket🎫 \(cart.items.count)")
                     }
-                    Text("costo totale" + cart.totalPriceString )
+                    Text("Totale provvisorio" + cart.totalPriceString )
                         .padding(2)
                     
                     List {
@@ -46,10 +46,12 @@ struct CartView: View {
                             
                         }
                     }
+                    .listStyle(.plain)
                     
                     
                    
                 }
+                .padding()
                 
                 
             .navigationTitle("Carello")

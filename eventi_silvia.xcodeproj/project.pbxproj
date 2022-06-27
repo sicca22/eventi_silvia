@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */; };
 		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
 		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
 		1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
 		1B5BC7F02833E3C8009A7DFC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				1B9014352858D08D005F31D4 /* CartHelper.swift */,
 				1BCB533F282AB3B500AAF7A4 /* UIHelper.swift */,
 				1BB1D3282833F7FC00E233AB /* LoginHelper.swift */,
+				1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */,
 				1B9014362858D08D005F31D4 /* CartHelper.swift in Sources */,
 				1BAA731E286213FA003BD749 /* EventMapView.swift in Sources */,
+				1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */,
 				1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
