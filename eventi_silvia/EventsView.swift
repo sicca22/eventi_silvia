@@ -60,7 +60,7 @@ struct EventCard: View {
         VStack (alignment: .leading){
             ImageView(
                 url: eventToShow.coverUrl )
-                .frame(width: . infinity ,height:200)
+                .frame(height:200)
                 .cornerRadius(24)
                 .overlay {
                     VStack {

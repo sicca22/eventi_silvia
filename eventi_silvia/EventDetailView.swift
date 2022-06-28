@@ -35,6 +35,7 @@ struct EventDetailView: View {
            ImageView(url: eventToShow.coverUrl )
                 .ignoresSafeArea()
                 .frame(height: 220)
+                .mask(Rectangle().edgesIgnoringSafeArea(.top))
             // Nascondo il pulsante per tornare indietro
                 .navigationBarHidden(true)
             // Aggiungo il pulsante custom per tornare indietro
@@ -120,14 +121,12 @@ struct EventDetailView: View {
                         Map(
                             coordinateRegion: $region,
                             //disabilito l'interazione dell'utente
-                            interactionModes: [],
-                            annotationItems: [MapLocation()],
+                            
+                            annotationItems: [eventToShow.mapLocation],
                             annotationContent: { location in
                                 MapMarker(coordinate: location.coordinate )
                             }
-                            
                         )
-                        
                         
                             .frame(height: 160)
                         .cornerRadius(16)
@@ -156,11 +155,12 @@ struct EventDetailView: View {
                         ImageView(url:eventToShow.user?.avatarUrl)
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
-                        HStack {
+                        VStack (alignment: .leading){
                             Text(eventToShow.user?.lastName ?? "Organizzatore")
-                            Text("\(eventToShow.user?.eventsCount ?? 0)")
+                            Text("Eventi creati: \(eventToShow.user?.eventsCount ?? 0)")
                             
                         }
+                        Spacer()
                         Image (systemName: "arrow.right")
                             
                         
@@ -199,7 +199,7 @@ struct EventDetailView: View {
                             }
                             .padding(.horizontal, 32)
                             .padding(.vertical, 16)
-                            .background(.blue)
+                            .background(Color("baseColor"))
                             .cornerRadius(16)
                         }
 

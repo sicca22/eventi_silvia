@@ -34,7 +34,10 @@ struct EventMapView: View {
             )
                 .ignoresSafeArea()
         
-        
+                .onAppear{
+                region.center.latitude = eventToShow.lat ?? 0
+                region.center.longitude = eventToShow.lng ?? 0
+            }
         
             VStack {
                 Spacer()

@@ -23,23 +23,16 @@ struct LoginView: View {
         VStack(alignment: .leading, spacing: 0 ) {
 
             Text("Inserisci tutti i dati per accedere")
-
                 .padding()
 
             
 
             TextField("Email" , text: $email )
-
                 .keyboardType(.emailAddress)
-
                 .textInputAutocapitalization(.never)
-
                 .disableAutocorrection(true)
-
                 .padding()
-
                 .font(.system(size: 16, weight: .medium ))
-
                 .overlay {
 
                     RoundedRectangle(cornerRadius: 16)
@@ -51,15 +44,10 @@ struct LoginView: View {
                 .padding(.bottom)
 
             SecureField("Password" , text: $password )
-
                 .padding()
-
                 .font(.system(size: 16, weight: .medium ))
-
                 .overlay {
-
                     RoundedRectangle(cornerRadius: 16)
-
                         .stroke(Color(hex: 0xDDDDDD), lineWidth: 1 )
                 }
 
@@ -70,11 +58,9 @@ struct LoginView: View {
                 
 
                 Text ("Password dimenticata?")
-
                     .foregroundColor(Color(hex: 0x969696))
 
                 Text ("Recuperala")
-
                     .bold()
 
                 
@@ -90,9 +76,7 @@ struct LoginView: View {
             VStack {
 
                 HStack(spacing: 0) {
-
                     Text ("Non hai un account?")
-
                     Text("Registrati")
 
                         .bold()
@@ -106,13 +90,9 @@ struct LoginView: View {
                 } label: {
 
                     Text ("Accedi")
-
                         .font(.system(size: 18).bold())
-
                         .foregroundColor(.white)
-
                         .padding()
-
                         .frame(maxWidth: .infinity)
                     
 
