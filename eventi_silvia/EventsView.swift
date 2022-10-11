@@ -12,6 +12,8 @@ struct EventsView: View {
     //eventi da mostrare
     
     @State var eventsToShow: [EventModel] = []
+    //array dei pin da mettere sulla mappa
+    @State var mapItems: [MapLocation] = []
     @State var isList = true
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 42, longitude: 12),
@@ -40,7 +42,23 @@ struct EventsView: View {
             //tolgo il padding intorno alla lista
             .listStyle(.plain)
                 } else {
-                    Map(coordinateRegion: $region)
+                    Map(
+                        coordinateRegion: $region,
+                        showsUserLocation: true,
+                        
+                        annotationItems: mapItems,
+                        annotationContent: {location in
+                            MapAnnotation(
+                                coordinate: location.coordinate,
+                                content: {
+                                    Image(systemName: "mappin.circle.fill")
+                                        .font(.system(size: 40))
+                                        .foregroundColor(.red)
+                                }
+                            )
+                            
+                        }
+                    )
                 }
             }
             //metto un titolo provvisorio alla pagina
@@ -50,6 +68,7 @@ struct EventsView: View {
                     Task {
                         //scarico la lista degli eventi appena compare la pagina
                         await updateEvents()
+                        updateMapItems()
                     }
             }
                 .toolbar{
@@ -68,6 +87,12 @@ struct EventsView: View {
             .request(url: "https://edu.davidebalistreri.it/app/v2/events")
             .response(type: EventResponse.self)
             .body?.data ?? []
+    }
+    @MainActor func updateMapItems() {
+        //converto gli eventmodel n un array di maplocation
+        mapItems = eventsToShow.map { event in
+            event.mapLocation
+        }
     }
 }
 
