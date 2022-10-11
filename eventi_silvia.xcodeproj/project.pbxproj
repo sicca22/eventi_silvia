@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0FC8C528F5C00500F49B87 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FC8C428F5C00500F49B87 /* WebView.swift */; };
 		1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */; };
 		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
 		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0FC8C428F5C00500F49B87 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
 		1B5BC7F02833E3C8009A7DFC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1B8BAC9D285384EA00BE4A07 /* ImageView.swift */,
 				1B8BAC9F2853A46800BE4A07 /* CartView.swift */,
 				1B8BACA12853A57600BE4A07 /* ProfileView.swift */,
+				1B0FC8C428F5C00500F49B87 /* WebView.swift */,
 				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
@@ -233,6 +236,7 @@
 				1BAA731E286213FA003BD749 /* EventMapView.swift in Sources */,
 				1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */,
 				1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */,
+				1B0FC8C528F5C00500F49B87 /* WebView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
 				1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */,
