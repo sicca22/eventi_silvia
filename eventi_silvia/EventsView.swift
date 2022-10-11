@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct EventsView: View {
     //eventi da mostrare
     
     @State var eventsToShow: [EventModel] = []
+    @State var isList = true
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 42, longitude: 12),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.5,
+            longitudeDelta: 0.5)
+    )
+
     
     var body: some View {
         NavigationView {
+            
+            Group{
+                if isList {
             List(eventsToShow) { event in
                 ZStack {
                     EventCard(eventToShow: event)
@@ -24,11 +36,15 @@ struct EventsView: View {
                 .listRowSeparator(.hidden)
                 
             }
+            
             //tolgo il padding intorno alla lista
             .listStyle(.plain)
-            
+                } else {
+                    Map(coordinateRegion: $region)
+                }
+            }
             //metto un titolo provvisorio alla pagina
-            .navigationTitle("Lista eventi")
+            .navigationTitle("Eventi")
             .navigationBarTitleDisplayMode(.inline)
                 .onAppear {
                     Task {
@@ -36,6 +52,15 @@ struct EventsView: View {
                         await updateEvents()
                     }
             }
+                .toolbar{
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                isList.toggle()
+                            }label: {
+                                Image(systemName: isList ? "map" : "list.bullet.below.rectangle")
+                            }
+                        }
+                    }
         }
     }
     @MainActor func updateEvents() async {
