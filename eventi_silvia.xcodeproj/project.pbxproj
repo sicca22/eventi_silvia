@@ -32,6 +32,7 @@
 		1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */; };
 		1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB5343282ABE1900AAF7A4 /* LoginView.swift */; };
 		1BE0AB96284F9E6C00CD5751 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */; };
+		1BFC345D2902F066003AA769 /* GalleryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC345C2902F066003AA769 /* GalleryPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1BCB5343282ABE1900AAF7A4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		1BFC345C2902F066003AA769 /* GalleryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				1B0FC8C428F5C00500F49B87 /* WebView.swift */,
 				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
+				1BFC345C2902F066003AA769 /* GalleryPicker.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
 				1BC73F5C2869B28F00183FAF /* Resources */,
 				1B5BC7EF2833E39E009A7DFC /* Models */,
@@ -249,6 +252,7 @@
 				1B652E2728620F2500A6D855 /* MapLocation.swift in Sources */,
 				1B890C75283D33E200CC0A77 /* EventsView.swift in Sources */,
 				1B890C77283D345F00CC0A77 /* EventModel.swift in Sources */,
+				1BFC345D2902F066003AA769 /* GalleryPicker.swift in Sources */,
 				1B8BAC9E285384EA00BE4A07 /* ImageView.swift in Sources */,
 				1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */,
 			);

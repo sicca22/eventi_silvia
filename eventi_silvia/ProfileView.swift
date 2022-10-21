@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
-   
+  @State var isShowingSingUP = false
+    @State var pickedImage : UIImage?
    
     var body: some View {
         NavigationView {
@@ -19,7 +20,23 @@ struct ProfileView: View {
                 .clipShape(Circle())
         Text(LoginHelper.shared.loggedUser?.firstName ?? "Senza nome")
                 .padding()
-           
+            Button {
+                isShowingSingUP.toggle()
+            }label:{
+                Text(LoginHelper.shared.loggedUser?.firstName ?? "Senza nome")
+                    .sheet(isPresented:$isShowingSingUP ) {
+                        GalleryPicker(selectedImage: $pickedImage)
+                    }
+                    .onChange(of: pickedImage) { _ in
+                        
+                    }
+                
+            }
+            
+            Image(uiImage: pickedImage?? )
+            
+            
+            
             Button {
                 //codice bottone
                 LoginHelper.shared.save(userToSave: nil)

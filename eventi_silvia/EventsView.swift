@@ -52,13 +52,15 @@ struct EventsView: View {
                                 coordinate: location.coordinate,
                                 content: {
                                     //per portare all'evento se clicchi sull'icona
-                                    NavigationLink(destination: EventDetailView(eventToShow: location.event!)) {
+                                    //NavigationLink(destination: EventDetailView(eventToShow: location.event!)) {
                                         VStack {
                                             Image(systemName: "mappin.circle.fill")
                                                 .font(.system(size: 40))
                                             .foregroundColor(.red)
                                             Text(location.name)
-                                        }
+                                                .frame(width: 80)
+                                                .lineLimit(1)
+                                       // }
                                     }
                                     
                                 }
