@@ -44,8 +44,7 @@ struct EventsView: View {
                 } else {
                     Map(
                         coordinateRegion: $region,
-                        showsUserLocation: true,
-                        
+                        showsUserLocation: true,                    
                         annotationItems: mapItems,
                         annotationContent: {location in
                             MapAnnotation(
