@@ -44,15 +44,23 @@ struct EventsView: View {
                 } else {
                     Map(
                         coordinateRegion: $region,
-                        showsUserLocation: true,                    
+                        showsUserLocation: true,
+                        userTrackingMode: .constant(.follow),
                         annotationItems: mapItems,
                         annotationContent: {location in
                             MapAnnotation(
                                 coordinate: location.coordinate,
                                 content: {
-                                    Image(systemName: "mappin.circle.fill")
-                                        .font(.system(size: 40))
-                                        .foregroundColor(.red)
+                                    //per portare all'evento se clicchi sull'icona
+                                    NavigationLink(destination: EventDetailView(eventToShow: location.event!)) {
+                                        VStack {
+                                            Image(systemName: "mappin.circle.fill")
+                                                .font(.system(size: 40))
+                                            .foregroundColor(.red)
+                                            Text(location.name)
+                                        }
+                                    }
+                                    
                                 }
                             )
                             
@@ -64,10 +72,12 @@ struct EventsView: View {
             .navigationTitle("Eventi")
             .navigationBarTitleDisplayMode(.inline)
                 .onAppear {
+                    
                     Task {
                         //scarico la lista degli eventi appena compare la pagina
                         await updateEvents()
                         updateMapItems()
+                        
                     }
             }
                 .toolbar{
@@ -92,6 +102,10 @@ struct EventsView: View {
         mapItems = eventsToShow.map { event in
             event.mapLocation
         }
+        if let firstEvent = eventsToShow.first {
+            region.center = firstEvent.coordinate
+        }
+        
     }
 }
 

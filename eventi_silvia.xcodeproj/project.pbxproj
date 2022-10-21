@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B0FC8C528F5C00500F49B87 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FC8C428F5C00500F49B87 /* WebView.swift */; };
 		1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */; };
+		1B3179F32902DBE7001F444A /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 1B3179F22902DBE7001F444A /* SwiftySound */; };
 		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
 		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
 		1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */; };
@@ -23,7 +24,6 @@
 		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
 		1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3282833F7FC00E233AB /* LoginHelper.swift */; };
 		1BC73F602869B38900183FAF /* acquisto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BC73F5F2869B38900183FAF /* acquisto.mp3 */; };
-		1BC73F632869B4BB00183FAF /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 1BC73F622869B4BB00183FAF /* SwiftySound */; };
 		1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */; };
 		1BCB532F282AAEE500AAF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB532E282AAEE500AAF7A4 /* Assets.xcassets */; };
 		1BCB5332282AAEE500AAF7A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BCB5331282AAEE500AAF7A4 /* Preview Assets.xcassets */; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC73F632869B4BB00183FAF /* SwiftySound in Frameworks */,
+				1B3179F32902DBE7001F444A /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			);
 			name = eventi_silvia;
 			packageProductDependencies = (
-				1BC73F622869B4BB00183FAF /* SwiftySound */,
+				1B3179F22902DBE7001F444A /* SwiftySound */,
 			);
 			productName = eventi_silvia;
 			productReference = 1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */;
@@ -201,7 +201,7 @@
 			);
 			mainGroup = 1BCB531E282AAEE100AAF7A4;
 			packageReferences = (
-				1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */,
+				1B3179F12902DBE7001F444A /* XCRemoteSwiftPackageReference "SwiftySound" */,
 			);
 			productRefGroup = 1BCB5328282AAEE100AAF7A4 /* Products */;
 			projectDirPath = "";
@@ -455,20 +455,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+		1B3179F12902DBE7001F444A /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			repositoryURL = "https://github.com/adamcichy/SwiftySound";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1BC73F622869B4BB00183FAF /* SwiftySound */ = {
+		1B3179F22902DBE7001F444A /* SwiftySound */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1BC73F612869B4BB00183FAF /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			package = 1B3179F12902DBE7001F444A /* XCRemoteSwiftPackageReference "SwiftySound" */;
 			productName = SwiftySound;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -13,4 +13,6 @@ struct MapLocation: Identifiable {
     var id = UUID()
     var name = ""
     var coordinate = CLLocationCoordinate2D()
+    
+    var event: EventModel?
 }
