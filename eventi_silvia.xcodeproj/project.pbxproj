@@ -10,7 +10,8 @@
 		1B0FC8C528F5C00500F49B87 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0FC8C428F5C00500F49B87 /* WebView.swift */; };
 		1B182BF12869FF0A00DC9CD3 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */; };
 		1B3179F32902DBE7001F444A /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 1B3179F22902DBE7001F444A /* SwiftySound */; };
-		1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */; };
+		1B54559529082B1C001BFEEB /* DBNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 1B54559429082B1C001BFEEB /* DBNetworking */; };
+		1B54559729083687001BFEEB /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B54559629083687001BFEEB /* EditProfileView.swift */; };
 		1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F02833E3C8009A7DFC /* UserModel.swift */; };
 		1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */; };
 		1B652E2728620F2500A6D855 /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B652E2628620F2500A6D855 /* MapLocation.swift */; };
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		1B0FC8C428F5C00500F49B87 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1B182BF02869FF0A00DC9CD3 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
-		1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBNetworking.swift; sourceTree = "<group>"; };
+		1B54559629083687001BFEEB /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		1B5BC7F02833E3C8009A7DFC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1B5BC7F22833E4D1009A7DFC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		1B652E2628620F2500A6D855 /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B54559529082B1C001BFEEB /* DBNetworking in Frameworks */,
 				1B3179F32902DBE7001F444A /* SwiftySound in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,7 +131,6 @@
 				1BCB532A282AAEE100AAF7A4 /* eventi_silviaApp.swift */,
 				1BCB5338282AAF0700AAF7A4 /* splashView.swift */,
 				1BAA731D286213FA003BD749 /* EventMapView.swift */,
-				1B5BC7ED2833E0AB009A7DFC /* DBNetworking.swift */,
 				1BCB5341282AB4B400AAF7A4 /* WelcomeView.swift */,
 				1B890C74283D33E200CC0A77 /* EventsView.swift */,
 				1B8BAC9D285384EA00BE4A07 /* ImageView.swift */,
@@ -138,6 +139,7 @@
 				1B0FC8C428F5C00500F49B87 /* WebView.swift */,
 				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
+				1B54559629083687001BFEEB /* EditProfileView.swift */,
 				1BFC345C2902F066003AA769 /* GalleryPicker.swift */,
 				1BCB5343282ABE1900AAF7A4 /* LoginView.swift */,
 				1BC73F5C2869B28F00183FAF /* Resources */,
@@ -174,6 +176,7 @@
 			name = eventi_silvia;
 			packageProductDependencies = (
 				1B3179F22902DBE7001F444A /* SwiftySound */,
+				1B54559429082B1C001BFEEB /* DBNetworking */,
 			);
 			productName = eventi_silvia;
 			productReference = 1BCB5327282AAEE100AAF7A4 /* eventi_silvia.app */;
@@ -205,6 +208,7 @@
 			mainGroup = 1BCB531E282AAEE100AAF7A4;
 			packageReferences = (
 				1B3179F12902DBE7001F444A /* XCRemoteSwiftPackageReference "SwiftySound" */,
+				1B54559329082B1C001BFEEB /* XCRemoteSwiftPackageReference "dbnetworking" */,
 			);
 			productRefGroup = 1BCB5328282AAEE100AAF7A4 /* Products */;
 			projectDirPath = "";
@@ -242,12 +246,12 @@
 				1B0FC8C528F5C00500F49B87 /* WebView.swift in Sources */,
 				1BCB5339282AAF0700AAF7A4 /* splashView.swift in Sources */,
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
-				1B5BC7EE2833E0AB009A7DFC /* DBNetworking.swift in Sources */,
 				1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */,
 				1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */,
 				1B8BACA22853A57600BE4A07 /* ProfileView.swift in Sources */,
 				1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */,
 				1B5BC7F32833E4D1009A7DFC /* ResponseModel.swift in Sources */,
+				1B54559729083687001BFEEB /* EditProfileView.swift in Sources */,
 				1BCB5342282AB4B400AAF7A4 /* WelcomeView.swift in Sources */,
 				1B652E2728620F2500A6D855 /* MapLocation.swift in Sources */,
 				1B890C75283D33E200CC0A77 /* EventsView.swift in Sources */,
@@ -467,6 +471,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		1B54559329082B1C001BFEEB /* XCRemoteSwiftPackageReference "dbnetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davidebalistreri/dbnetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -474,6 +486,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B3179F12902DBE7001F444A /* XCRemoteSwiftPackageReference "SwiftySound" */;
 			productName = SwiftySound;
+		};
+		1B54559429082B1C001BFEEB /* DBNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B54559329082B1C001BFEEB /* XCRemoteSwiftPackageReference "dbnetworking" */;
+			productName = DBNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

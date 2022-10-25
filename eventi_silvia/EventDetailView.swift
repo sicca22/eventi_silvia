@@ -3,7 +3,7 @@
 import SwiftySound
 import SwiftUI
 import MapKit
-
+import DBNetworking
 
 
 struct EventDetailView: View {

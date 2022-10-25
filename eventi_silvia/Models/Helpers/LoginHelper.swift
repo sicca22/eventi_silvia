@@ -17,7 +17,7 @@ class LoginHelper: ObservableObject {
     //alternativa per non fare variabili statiche
     
     
-    var loggedUser: UserModel?
+   @Published var loggedUser: UserModel?
     static var shared = LoginHelper()
     //questa funzione carica l'utente connessi dal databese del server
     func load() {

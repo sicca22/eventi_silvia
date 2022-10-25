@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "dbnetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/davidebalistreri/dbnetworking",
+      "state" : {
+        "revision" : "89a85c3c3960cb886a7d86bea897c65206759491",
+        "version" : "1.0.3"
+      }
+    },
+    {
       "identity" : "swiftysound",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/adamcichy/SwiftySound",
