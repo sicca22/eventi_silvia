@@ -11,12 +11,13 @@ struct ProfileView: View {
     @State var isShowingSingUP = false
     @State var pickedImage : UIImage?
     @State var isChangeAvatarOpen = false
+    @State var user = LoginHelper.shared.loggedUser
     
     var body: some View {
         NavigationView {
             VStack{
                 
-                ImageView(url:LoginHelper.shared.loggedUser?.avatarUrl)
+                ImageView(url:user?.avatarUrl)
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
                 Button ("modifica profilo") {
@@ -28,7 +29,7 @@ struct ProfileView: View {
                     EditProfileView()
                 }
                 
-                Text(LoginHelper.shared.loggedUser?.firstName ?? "Senza nome")
+                Text(user?.firstName ?? "Senza nome")
                     .padding()
                 Button {
                     isShowingSingUP.toggle()
@@ -97,6 +98,7 @@ struct ProfileView: View {
                 //avatar modificato correttamente 
                 if let updateUser = response.body?.data {
                     LoginHelper.shared.save(userToSave: updateUser)
+                    user = updateUser
                 }
                 
             } else {
