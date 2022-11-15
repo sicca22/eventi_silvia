@@ -11,6 +11,10 @@ import DBNetworking
 
 struct EditProfileView: View {
     
+    //per chiudere la pagina direttamente
+    @Environment(\.presentationMode) private var presentationMode
+    //variabile per ricaricare la pagine dell'utente
+    @Binding var refreshUser: Bool
     @State private var email = ""
     @State private var emailPlaceholder = ""
     @State private var emailError = false
@@ -26,8 +30,7 @@ struct EditProfileView: View {
     @State private var cityPlaceholder = ""
     //indica quando è possibile salvarel'utente
     @State private var canSave = true
-    //per chiudere la pagina direttamente
-    @Environment(\.presentationMode) private var presentationMode
+    
     
     //enum Field: Int, Hashable {
     // case email
@@ -100,6 +103,15 @@ struct EditProfileView: View {
                 }
             .onAppear{
                 email = LoginHelper.shared.loggedUser?.email ?? ""
+                emailPlaceholder = LoginHelper.shared.loggedUser?.email ?? ""
+                name = LoginHelper.shared.loggedUser?.firstName ?? ""
+                namePlaceholder = LoginHelper.shared.loggedUser?.firstName ?? ""
+                surname = LoginHelper.shared.loggedUser?.lastName ?? ""
+                surnamePlaceholder = LoginHelper.shared.loggedUser?.lastName ?? ""
+                bornDate = LoginHelper.shared.loggedUser?.birthDate ?? ""
+                bornDatePlaceholder = LoginHelper.shared.loggedUser?.birthDate ?? ""
+                city = LoginHelper.shared.loggedUser?.city ?? ""
+               cityPlaceholder = LoginHelper.shared.loggedUser?.city ?? ""
             }
             
         }
@@ -126,13 +138,44 @@ struct EditProfileView: View {
         //metto l'email solo se non è vuota
         if email.isEmpty == false {
             parameters["email"] = self.email
+           
         }
+       if name.isEmpty == false {
+           
+           parameters["firstName"] = self.name
+           
+       }
+       if surname.isEmpty == false {
+           
+           parameters["lastName"] = self.surname
+           
+       }
+       if bornDate.isEmpty == false {
+          
+           parameters["birthDate"] = self.bornDate
+           
+       }
+       if city.isEmpty == false {
+          
+           parameters["city"] = self.city
+       }
+       
+       
         let request = DBNetworking.request(
             url: "https://edu.davidebalistreri.it/app/v2/user",
             type: .put,
+            authToken: LoginHelper.shared.loggedUser?.authToken,
             parameters: parameters
         )
         let response = await request.response(type: ResponseModel.self)
+       //controllo se la richiesta è eandata a buon fine
+       if let updateUser = response.body?.data {
+           //aggiorno l'utente connesso
+           LoginHelper.shared.save(userToSave: updateUser)
+           refreshUser = true
+           //chiudo qyesta pagina
+           dismissModal()
+       }
     }
 }
 
@@ -141,33 +184,9 @@ struct EditProfileView: View {
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
         LoginHelper.shared.load()
-        return EditProfileView()
+        return EditProfileView(refreshUser: .constant(false))
     }
     
 }
 
-struct CustumTextField: View{
-    var title: String
-    var placeholder: String
-   @Binding var text: String
-    
-    var isError = false
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(title).bold()
-            TextField(placeholder,text: $text)
-                .padding()
-                .font(.system(size: 16, weight: .medium))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(
-                            isError ? .red : .gray
-                       ,
-                        lineWidth: 1
-                        )
-                }
-                
-            
-        }
-    }
-}
+

@@ -12,6 +12,10 @@ struct ProfileView: View {
     @State var pickedImage : UIImage?
     @State var isChangeAvatarOpen = false
     @State var user = LoginHelper.shared.loggedUser
+  
+    //variabile usata da efitProfileView per ricaricare questa pagina
+    //quando viene aggiunto l'utente connesso
+    @State var refreshUser = false
     
     var body: some View {
         NavigationView {
@@ -26,7 +30,15 @@ struct ProfileView: View {
                 }
                 .padding()
                 .fullScreenCover(isPresented: $isChangeAvatarOpen) {
-                    EditProfileView()
+                    EditProfileView(refreshUser: $refreshUser)
+                }
+                .onChange(of: refreshUser) { _ in
+                    if refreshUser == true {
+                        user = LoginHelper.shared.loggedUser
+                        
+                        refreshUser = false
+                    }
+                    
                 }
                 
                 Text(user?.firstName ?? "Senza nome")
@@ -54,6 +66,7 @@ struct ProfileView: View {
                     LoginHelper.shared.save(userToSave: nil)
                 } label: {
                     Text("LogOut")
+                        
                         .foregroundColor(.white)
                         .bold()
                     
@@ -61,7 +74,7 @@ struct ProfileView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
                 .background(Color("baseColor"))
-                .cornerRadius(16)
+                .cornerRadius(8)
                 
                 
             }
