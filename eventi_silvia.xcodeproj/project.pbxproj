@@ -22,6 +22,8 @@
 		1B8BACA22853A57600BE4A07 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8BACA12853A57600BE4A07 /* ProfileView.swift */; };
 		1B9014362858D08D005F31D4 /* CartHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9014352858D08D005F31D4 /* CartHelper.swift */; };
 		1B993EA42923DEE2009986BD /* CustumTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B993EA32923DEE2009986BD /* CustumTextField.swift */; };
+		1B993EA62923F5F8009986BD /* CreateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B993EA52923F5F8009986BD /* CreateEventView.swift */; };
+		1B993EAB2923F691009986BD /* CreateEventAdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B993EAA2923F691009986BD /* CreateEventAdressView.swift */; };
 		1B9B1F9A291ABD9700AB0288 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B1F99291ABD9700AB0288 /* StringHelper.swift */; };
 		1BAA731E286213FA003BD749 /* EventMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAA731D286213FA003BD749 /* EventMapView.swift */; };
 		1BB1D3272833F76D00E233AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1D3262833F76D00E233AB /* HomeView.swift */; };
@@ -52,6 +54,8 @@
 		1B8BACA12853A57600BE4A07 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1B9014352858D08D005F31D4 /* CartHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartHelper.swift; sourceTree = "<group>"; };
 		1B993EA32923DEE2009986BD /* CustumTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustumTextField.swift; sourceTree = "<group>"; };
+		1B993EA52923F5F8009986BD /* CreateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventView.swift; sourceTree = "<group>"; };
+		1B993EAA2923F691009986BD /* CreateEventAdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventAdressView.swift; sourceTree = "<group>"; };
 		1B9B1F99291ABD9700AB0288 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		1BAA731D286213FA003BD749 /* EventMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapView.swift; sourceTree = "<group>"; };
 		1BB1D3262833F76D00E233AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 				1BB1D32A2833F81B00E233AB /* Helpers */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1B993EA92923F670009986BD /* Create Event */ = {
+			isa = PBXGroup;
+			children = (
+				1B993EA52923F5F8009986BD /* CreateEventView.swift */,
+				1B993EAA2923F691009986BD /* CreateEventAdressView.swift */,
+			);
+			path = "Create Event";
 			sourceTree = "<group>";
 		};
 		1BB1D32A2833F81B00E233AB /* Helpers */ = {
@@ -144,6 +157,7 @@
 				1B0FC8C428F5C00500F49B87 /* WebView.swift */,
 				1BE0AB95284F9E6C00CD5751 /* EventDetailView.swift */,
 				1B993EA32923DEE2009986BD /* CustumTextField.swift */,
+				1B993EA92923F670009986BD /* Create Event */,
 				1BB1D3262833F76D00E233AB /* HomeView.swift */,
 				1B54559629083687001BFEEB /* EditProfileView.swift */,
 				1BFC345C2902F066003AA769 /* GalleryPicker.swift */,
@@ -254,6 +268,7 @@
 				1B5BC7F12833E3C8009A7DFC /* UserModel.swift in Sources */,
 				1BCB532B282AAEE100AAF7A4 /* eventi_silviaApp.swift in Sources */,
 				1B993EA42923DEE2009986BD /* CustumTextField.swift in Sources */,
+				1B993EAB2923F691009986BD /* CreateEventAdressView.swift in Sources */,
 				1BCB5340282AB3B500AAF7A4 /* UIHelper.swift in Sources */,
 				1B8BACA22853A57600BE4A07 /* ProfileView.swift in Sources */,
 				1BCB5344282ABE1900AAF7A4 /* LoginView.swift in Sources */,
@@ -265,6 +280,7 @@
 				1B890C77283D345F00CC0A77 /* EventModel.swift in Sources */,
 				1BFC345D2902F066003AA769 /* GalleryPicker.swift in Sources */,
 				1B8BAC9E285384EA00BE4A07 /* ImageView.swift in Sources */,
+				1B993EA62923F5F8009986BD /* CreateEventView.swift in Sources */,
 				1BB1D3292833F7FC00E233AB /* LoginHelper.swift in Sources */,
 				1B9B1F9A291ABD9700AB0288 /* StringHelper.swift in Sources */,
 			);

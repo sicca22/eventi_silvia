@@ -82,14 +82,8 @@ struct EditProfileView: View {
             .navigationTitle("Modifica profilo")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            dismissModal()
-                        }label: {
-                            Image(systemName:  "xmark")
-                        }
-                    }
-                ToolbarItem(placement: .navigationBarLeading) {
+                    
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         Task{
                        await updateUserToServer()
@@ -99,6 +93,13 @@ struct EditProfileView: View {
                             
                     }
                     .disabled(canSave == false)
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismissModal()
+                    }label: {
+                        Image(systemName:  "xmark")
+                    }
                 }
                 }
             .onAppear{

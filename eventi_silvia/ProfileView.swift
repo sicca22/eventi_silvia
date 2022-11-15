@@ -20,7 +20,8 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack{
-                
+                Text(user?.firstName ?? "Senza nome")
+                    .padding()
                 ImageView(url:user?.avatarUrl)
                     .frame(width: 80, height: 80)
                     .clipShape(Circle())
@@ -41,8 +42,7 @@ struct ProfileView: View {
                     
                 }
                 
-                Text(user?.firstName ?? "Senza nome")
-                    .padding()
+               
                 Button {
                     isShowingSingUP.toggle()
                 }label:{
@@ -65,7 +65,7 @@ struct ProfileView: View {
                     //codice bottone
                     LoginHelper.shared.save(userToSave: nil)
                 } label: {
-                    Text("LogOut")
+                    Text("Esci")
                         
                         .foregroundColor(.white)
                         .bold()

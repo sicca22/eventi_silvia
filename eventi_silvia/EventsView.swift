@@ -15,6 +15,7 @@ struct EventsView: View {
     //array dei pin da mettere sulla mappa
     @State var mapItems: [MapLocation] = []
     @State var isList = true
+    @State var isCreatingAvatar =  false
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 42, longitude: 12),
         span: MKCoordinateSpan(
@@ -83,6 +84,17 @@ struct EventsView: View {
                     }
             }
                 .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            isCreatingAvatar.toggle()
+                        }label: {
+                            Image(systemName:  "plus")
+                        
+                    }
+                        .fullScreenCover(isPresented: $isCreatingAvatar) {
+                            CreateEventView()
+                        }
+                    }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button {
                                 isList.toggle()
