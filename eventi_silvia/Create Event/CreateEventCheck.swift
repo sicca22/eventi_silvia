@@ -133,9 +133,9 @@ struct CreateEventCheck: View {
                 "description": event.descrizione,
                 "price": event.price,
                 "address":  event.address,
-                "lat": 0.0,
-                "lng": 0.0,
-                "date": event.dateString,
+                "lat": event.coordinate?.latitude ?? 0,
+                "lng": event.coordinate?.latitude ?? 0,
+                "date": event.dateStringForServer,
             ],
             multipartFiles: [coverFile]
         )

@@ -26,6 +26,14 @@ class CartHelper: ObservableObject{
        calculateTotalPriceString()
    }
        func removeAll(item:EventModel){
+           self.items.filter{ event in
+               event.id != 0
+               
+           }
+           
+           items.removeAll()
+           updateItemsTogether()
+           calculateTotalPriceString()
            //deve filtrare array items self.item
            //self.items.filter{event in event.id != itemsTogether.count}
           // removeAll.self
