@@ -1,50 +1,65 @@
-//
-//  GalleryPicker.swift
-//  eventi_silvia
-//
-//  Created by iedstudent on 21/10/22.
+
 //
 
 import SwiftUI
 import PhotosUI
-struct GalleryPicker:UIViewControllerRepresentable {
-    //varisbile che viene modificata quando l'utente seleziona le immagini dal picker
+
+struct GalleryPicker : UIViewControllerRepresentable {
+    
     @Binding var selectedImage: UIImage?
+    
+    
     func makeUIViewController(context: Context) -> some UIViewController {
-        //creo il view controller
+        // Creo il view controller x la galleria
         var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
+        // per rendere pickabili solo le foto
         config.filter = .images
         config.selectionLimit = 1
-        let picker =  PHPickerViewController(configuration: config)
+        let picker = PHPickerViewController(configuration: config)
+        
+        //x far funzionare i tasti devo usare un delegate che reagisce quando l'utente vi interagisce
         picker.delegate = context.coordinator
         return picker
     }
+    
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
+    //
+    
+    //Uso la classe che ho creato come coordinatore x fare da delegate
     func makeCoordinator() -> Coordinator {
         let coordinator = Coordinator()
         coordinator.galleryPicker = self
-        return Coordinator()
+        return coordinator
     }
-    class Coordinator:NSObject, PHPickerViewControllerDelegate{
+    
+    
+    
+    
+    // Classe da usare come delegate x l'interazione con il picker della galleria
+    class Coordinator: NSObject, PHPickerViewControllerDelegate{
         var galleryPicker: GalleryPicker?
+        
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            //chiudo la modale del ticket
+            // Quando la foto viene selezionata, o cancel toccato, innanzitutto chiudo la modale della galleria
             picker.dismiss(animated: true)
             
-            //controlliamo se l'utente ha effetivamente selezionato qualcosa
+            // Controllo se l'utente ha selezionato una foto o qualcos'altro
             guard let provider = results.first?.itemProvider else {
-                //nessuna foto selezionata quindi interrompo l'esecuzione del codice
+                //Nessuna foto selezionata
                 return
             }
-            //è stata selezionata una fot, prendo un immagine chiedendola al provider
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self ){ image , error in
-                    
+            
+            // Chiedo la foto selezionata al provider
+            if provider.canLoadObject(ofClass: UIImage.self){
+                provider.loadObject(ofClass: UIImage.self){ image, error in
+                    // L'immagine che è stata selezionata viene passata al picker
                     self.galleryPicker?.selectedImage = image as? UIImage
                 }
             }
         }
     }
+    
+    
 }

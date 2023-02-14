@@ -28,7 +28,7 @@ struct SplashView: View {
         
         let tabAppearance = UITabBarAppearance()
         tabAppearance.configureWithOpaqueBackground()
-        tabAppearance.backgroundColor = UIColor(named: "secondaryColor")
+        tabAppearance.backgroundColor = UIColor(named: "secColor")
         UITabBar.appearance().standardAppearance = tabAppearance
         UITabBar.appearance().scrollEdgeAppearance = tabAppearance
         

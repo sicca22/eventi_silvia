@@ -19,69 +19,95 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
-                Text(user?.firstName ?? "Senza nome")
+           
+            VStack (alignment: .center
+            ){
+                Text(user?.firstName ?? "FirstName")
+                    .bold()
                     .padding()
                 ImageView(url:user?.avatarUrl)
-                    .frame(width: 80, height: 80)
+                    .frame(width: 160, height:160)
                     .clipShape(Circle())
-                Button ("modifica profilo") {
-                    //boolean per la nuova modale
-                    isChangeAvatarOpen.toggle()
-                }
-                .padding()
-                .fullScreenCover(isPresented: $isChangeAvatarOpen) {
-                    EditProfileView(refreshUser: $refreshUser)
-                }
-                .onChange(of: refreshUser) { _ in
-                    if refreshUser == true {
-                        user = LoginHelper.shared.loggedUser
+                    .padding(.bottom)
+                
+                VStack (alignment: .center
+                ) {
+                    Button ("Modifica profilo") {
+                        //boolean per la nuova modale
+                        isChangeAvatarOpen.toggle()
+                    }
+                    .padding(.bottom)
+                    .fullScreenCover(isPresented: $isChangeAvatarOpen) {
+                        EditProfileView(refreshUser: $refreshUser)
+                    }
+                    .onChange(of: refreshUser) { _ in
+                        if refreshUser == true {
+                            user = LoginHelper.shared.loggedUser
+                            
+                            refreshUser = false
+                        }
                         
-                        refreshUser = false
                     }
                     
-                }
-                
-               
-                Button {
-                    isShowingSingUP.toggle()
-                }label:{
-                    Text("modifica avatar")
-                        .sheet(isPresented:$isShowingSingUP ) {
-                            GalleryPicker(selectedImage: $pickedImage)
-                        }
-                        .onChange(of: pickedImage) { _ in
-                            //eseguo codice quando un utente vuole cambiare un immagine
-                            self.sendAvatarToServer(avatar: pickedImage)
-                        }
                     
-                }
-                
-                //Image(uiImage: pickedImage ?? UIImage())
-                
-                
-                
-                Button {
-                    //codice bottone
-                    LoginHelper.shared.save(userToSave: nil)
-                } label: {
-                    Text("Esci")
+                   
+                    VStack {
+                        Button {
+                            isShowingSingUP.toggle()
+                        }label:{
+                            Text("Modifica avatar")
+                                .sheet(isPresented:$isShowingSingUP ) {
+                                    GalleryPicker(selectedImage: $pickedImage)
+                                }
+                                .onChange(of: pickedImage) { _ in
+                                    //eseguo codice quando un utente vuole cambiare un immagine
+                                    sendAvatarToServer(avatar: pickedImage)
+                                }
+                            
+                            
+                            
+                           
+                            }
                         
-                        .foregroundColor(.white)
-                        .bold()
-                    
+                    .padding(.bottom)
+                    }
+                    VStack {
+                        NavigationLink(destination: CameraView(contents: [user?.ar ?? ARContent()])) {
+                                Text("ARobject")
+                                    .foregroundColor(.red)
+                        }
+                    }
                 }
-                .padding(.horizontal, 20)
-                .padding(.vertical, 10)
-                .background(Color("baseColor"))
-                .cornerRadius(8)
                 
                 
+                //Image(uiImage: pickedImage ?? UIImage()) LoginHelper.shared.save(userToSave: nil)
+                
+                Spacer()
+               
+                HStack {
+                  
+                        Button  {
+                            LoginHelper.shared.save(userToSave: nil)
+                        } label: {
+                            Text("Esci")
+                                .font(.system(size:16).bold())
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                        }
+                        .background(Color("baseColor2"))
+                        .cornerRadius(16)
+                        .padding()
+                        
+                        
+                    
+                    
+                    .navigationTitle("Profilo")
+                    .navigationBarTitleDisplayMode(.inline)
+                .padding()
+                }
             }
-            .navigationTitle("Profilo")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
+        }}
     func sendAvatarToServer(avatar: UIImage?) {
         guard let avatar = avatar else {
             //non c'è nessun avatar da caricare
@@ -124,6 +150,8 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         LoginHelper.shared.load()
-        return ProfileView()
+        return
+            ProfileView()
+        
     }
 }

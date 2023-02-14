@@ -20,19 +20,20 @@ struct CartView: View {
                 VStack (alignment: .leading) {
                    
                     if cart.items.isEmpty{
-                        Text("il carrello è vuoto")
+                        Text("Il carrello è vuoto, procedi all'acquisto")
                         
                     } else {
-                        Text("ticket🎫 \(cart.items.count)")
+                        Text("Ticket🎫 \(cart.items.count)")
                     }
                     Text("Totale provvisorio" + cart.totalPriceString )
                         .padding(2)
                     
                     List {
-                        ForEach(cart.items) { event in
+                        ForEach(cart.itemsTogether) { event in
                             HStack {
-                            Text(event.name ?? "nessun evento")
-                            Text(event.priceString )
+                                
+                            Text(event.nameAndQuantity )
+                            Text(event.totalPriceString )
                             }
                         }
                         .onDelete { indexSet in
@@ -41,7 +42,7 @@ struct CartView: View {
                                 let event = cart.items[index]
                                 
                                 //tolgo l'evento dal carrello
-                                cart.remove(item: event)
+                                cart.removeAll(item: event)
                             }
                             
                         }

@@ -20,7 +20,7 @@ struct CustumTextField: View{
                 .padding()
                 .font(.system(size: 16, weight: .medium))
                 .overlay {
-                    RoundedRectangle(cornerRadius: 16)
+                    RoundedRectangle(cornerRadius: 24)
                         .stroke(
                             isError ? .red : .gray
                        ,

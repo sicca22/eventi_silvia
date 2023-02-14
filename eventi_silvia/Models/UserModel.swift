@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct UserModel: Codable {
     var id:Int?
     var authToken:String?
@@ -20,5 +22,26 @@ struct UserModel: Codable {
     var createdAt:String?
     var updatedAt:String?
     var eventsCount:Int?
+    var ar: ARContent?
+    
     //var fullName: 
 }
+//var fullName:
+extension UserModel {
+    
+    var fullName: String {
+        
+        if let nome = firstName , let cognome = lastName {
+            return "\(nome) \(cognome)"
+        }
+        else if let nome = firstName {
+            return nome
+        }
+        else if let cognome = firstName {
+            return cognome
+        }
+        return ""
+    }
+}
+
+

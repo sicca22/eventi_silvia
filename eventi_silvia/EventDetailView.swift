@@ -6,6 +6,9 @@ import MapKit
 import DBNetworking
 
 
+//aggiugere possibilta di cancellare i prori eventi
+//aggiungere il pulsante per visualizzare l'getto ar 
+
 struct EventDetailView: View {
     
     // Per poter chiudere la pagina da un bottone x:
@@ -16,6 +19,9 @@ struct EventDetailView: View {
     var eventToShow: EventModel    
     //meteo
     @State private var temperatura: Double?
+    @State var alertsuccess = false
+        @State var alertdelete = false
+        @State var alerterror = false
     // L'area sulla mappa
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 42, longitude: 12),
@@ -28,7 +34,7 @@ struct EventDetailView: View {
     //questo boolean determina se se è visibile l'alert di acquisto
     @State var isAlertPurchaseVisible = false
     @State var isAlertMoneyVisible = false
-    
+   
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -155,13 +161,42 @@ struct EventDetailView: View {
                         ImageView(url:eventToShow.user?.avatarUrl)
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
-                        VStack (alignment: .leading){
-                            Text(eventToShow.user?.lastName ?? "Organizzatore")
-                            Text("Eventi creati: \(eventToShow.user?.eventsCount ?? 0)")
+                        
+                            VStack (alignment: .leading){
+                                Text(eventToShow.user?.lastName ?? "Organizzatore")
+                                Text("Eventi creati: \(eventToShow.user?.eventsCount ?? 0)")
+                                
                             
                         }
+                        HStack() {
+                                                        
+                                                        Button{
+                                                            alertdelete = true
+                                                        } label: {
+                                                            Text("Elimina evento")
+                                                                .font(.system(size: 18).bold())
+                                                                .foregroundColor(.red)
+                                                                .padding()
+                                                        }
+                                                        .background(Color("Error"))
+                                                        .cornerRadius(16)
+                                                        .padding(.bottom)
+                                                        .alert(isPresented: $alertdelete) {
+                                                            Alert(
+                                                                title: Text("Vuoi eliminare l'evento?"),
+                                                                primaryButton: .destructive(Text("Elimina")) {
+                                                                    Task {
+                                                                        await deleteEvent()
+                                                                    }
+                                                                },
+                                                                secondaryButton: .cancel(Text("Annulla"))
+                                                            )
+                                                        }
+                                                    }
                         Spacer()
-                        Image (systemName: "arrow.right")
+                        NavigationLink (destination: UserView(userToShow: eventToShow.user ?? UserModel())) {
+                            Image (systemName: "arrow.right")
+                        }
                             
                         
                         
@@ -254,9 +289,25 @@ struct EventDetailView: View {
         
         
     }
+    func deleteEvent() async {
+                let request = DBNetworking.request(
+                    url: "https://edu.davidebalistreri.it/app/v2/event/\(eventToShow.id ?? 0)",
+                    type: .delete,
+                    authToken: LoginHelper.shared.loggedUser?.authToken
+                )
+                Task {
+                    let response = await request.response()
+                    if response.success {
+                        alertsuccess = true
+                    }
+                    else {
+                        alerterror = true
+                    }
+                }
+            }
+
+
 }
-
-
 
 
 struct EventDetailView_Previews: PreviewProvider {
